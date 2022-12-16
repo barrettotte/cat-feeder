@@ -5,11 +5,11 @@ all:	build
 
 build:	clean
 	$(PIO) run --environment $(BOARD)
-#	$(PIO) run --target buildfs --environment $(BOARD)
+	$(PIO) run --target buildfs --environment $(BOARD)
 
 upload:	build
 	$(PIO) run --target upload --environment $(BOARD)
-#	$(PIO) run --target uploadfs --environment $(BOARD)
+	$(PIO) run --target uploadfs --environment $(BOARD)
 	$(PIO) device monitor
 
 get_serial:

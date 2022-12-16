@@ -1,0 +1,19 @@
+html {
+  font-family: Arial;
+  display: inline-block;
+  margin: 0px auto;
+  text-align: center;
+}
+
+h1 {
+  padding: 1vh;
+}
+  
+p {
+  font-size: 1.5rem;
+}
+  
+#repo-link {
+  padding: 1vh;
+}
+  
