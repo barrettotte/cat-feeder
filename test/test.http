@@ -5,3 +5,17 @@
 ### Hit homepage
 GET http://{{feeder}}/ HTTP/1.1
 
+### Test servo move
+POST http://{{feeder}}/servo?pos=0 HTTP/1.1
+
+### Test servo move
+POST http://{{feeder}}/servo?pos=180 HTTP/1.1
+
+### Disable motor
+POST http://{{feeder}}/motor?en=0 HTTP/1.1
+
+### Set motor speed and enable
+POST http://{{feeder}}/motor?speed=128&en=1 HTTP/1.1
+
+### Set motor speed and enable
+POST http://{{feeder}}/motor?en=1&speed=255 HTTP/1.1
