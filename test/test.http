@@ -6,16 +6,38 @@
 GET http://{{feeder}}/ HTTP/1.1
 
 ### Test servo move
-POST http://{{feeder}}/servo?pos=0 HTTP/1.1
+POST http://{{feeder}}/servo?a=0 HTTP/1.1
 
 ### Test servo move
-POST http://{{feeder}}/servo?pos=180 HTTP/1.1
+POST http://{{feeder}}/servo?a=180 HTTP/1.1
 
 ### Disable motor
 POST http://{{feeder}}/motor?en=0 HTTP/1.1
 
 ### Set motor speed and enable
-POST http://{{feeder}}/motor?speed=128&en=1 HTTP/1.1
+POST http://{{feeder}}/motor?s=128&en=1 HTTP/1.1
 
 ### Set motor speed and enable
-POST http://{{feeder}}/motor?en=1&speed=255 HTTP/1.1
+POST http://{{feeder}}/motor?en=1&s=255 HTTP/1.1
+
+### Get config
+GET http://{{feeder}}/config HTTP/1.1
+Content-Type: application/json
+
+### Set config
+POST http://{{feeder}}/config HTTP/1.1
+Content-Type: application/json
+
+{
+    "duration": 2,
+    "speed": 255
+}
+
+### Reset config
+POST http://{{feeder}}/reset HTTP/1.1
+
+### Test feed with configured values
+POST http://{{feeder}}/feed HTTP/1.1
+
+### Test feed with overriden config values (does not change config)
+POST http://{{feeder}}/feed?s=150&d=1
