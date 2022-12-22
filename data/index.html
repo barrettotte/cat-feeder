@@ -7,10 +7,38 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <h1>Cat Feeder</h1>
-  <a id="repo-link" href="https://github.com/barrettotte/cat-feeder">https://github.com/barrettotte/cat-feeder</a>
-  <p>Hello world</p>
+  <header>
+    <h1>Cat Feeder 🐈</h1>
+  </header>
+  <main>
+    <section id="main-controls">
+      <p class="section-heading">Controls</p>
+      <!-- TODO: align center -->
+      <span>Duration</span>
+      <input id="duration-slider" type="range" min="0" max="25" value="5">
+      <span id="duration-display"></span>
+      <br>
+      <span>Speed</span>
+      <input id="speed-slider" type="range" min="0" max="100" value="50">
+      <span id="speed-display"></span>
+      <br>
+      <button id="feed-button" type="button">Feed the Cat!</button>
+    </section>
+    <section id="config-actions">
+      <p class="section-heading">Configuration</p>
+      <button id="view-button" class="config-button" type="button">View</button>
+      <button id="save-button" class="config-button" type="button">Save To Feeder</button>
+      <button id="reset-button" class="config-button" type="button">Reset</button>
+      <br>
+    </section>
+    <section id="terminal">
+      <p class="section-heading">Terminal</p>
+      <code id="curl-cmd">curl -X POST ?</code>
+    </section>
+  </main>
+  <footer>
+    View source at <a href="https://github.com/barrettotte/cat-feeder">https://github.com/barrettotte/cat-feeder</a>
+  </footer>
 </body>
-<script>
-</script>
+<script src="cat-feeder.js"></script> 
 </html>

@@ -3,17 +3,36 @@ html {
   display: inline-block;
   margin: 0px auto;
   text-align: center;
+  font-size: 1.0rem;
 }
 
-h1 {
-  padding: 1vh;
+header {
+  font-size: 1.25rem;
+  margin: 10px 0px;
 }
-  
-p {
-  font-size: 1.5rem;
+
+section {
+  padding: 15px 0px;
 }
-  
-#repo-link {
-  padding: 1vh;
+
+.section-heading {
+  font-size: 1.50rem;
+  font-weight: bold;
+  padding-bottom: 5px;
 }
-  
+
+#feed-button {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.config-button {
+  margin: 0px 10px;
+  padding: 2px 10px;
+}
+
+footer {
+  margin: 50px 0px;
+}

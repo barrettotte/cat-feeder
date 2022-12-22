@@ -254,6 +254,9 @@ void initServer() {
     server.on("/styles.css", HTTP_GET, [](AsyncWebServerRequest* req) {
         req->send(LittleFS, "/styles.css", "text/css");
     });
+    server.on("/cat-feeder.js", HTTP_GET, [](AsyncWebServerRequest* req) {
+        req->send(LittleFS, "/cat-feeder.js", "application/javascript");
+    });
     server.on("/config.json", HTTP_GET, [](AsyncWebServerRequest* req) {
         req->send(LittleFS, "/config.json", "application/json");
     });

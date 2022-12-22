@@ -18,5 +18,8 @@ get_serial:
 monitor:
 	$(PIO) device monitor
 
+mock:
+	python3 test/mock.py
+
 clean:
 	$(PIO) run -t clean

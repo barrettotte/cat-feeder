@@ -1,12 +1,13 @@
 # mock cat-feeder backend
 
 import json
-import time
 from flask import Flask, Response, request, send_from_directory
 
 DEFAULT_DURATION = 5
 DEFAULT_SPEED = 128
 DATA_DIR = '../data'
+
+config = {'duration': DEFAULT_DURATION, 'speed': DEFAULT_SPEED}
 
 app = Flask(__name__)
 
@@ -18,9 +19,13 @@ def index():
 def get_styles_css():
     return send_from_directory(DATA_DIR, 'styles.css')
 
+@app.route('/cat-feeder.js', methods=['GET'])
+def get_js():
+    return send_from_directory(DATA_DIR, 'cat-feeder.js')
+
 @app.route('/config.json', methods=['GET'])
 def get_config_json():
-    return send_from_directory(DATA_DIR, 'config.json')
+    return Response(json.dumps(config), status=200, mimetype='application/json;charset=utf-8')
 
 @app.route('/servo', methods=['POST'])
 def set_manual_servo():
@@ -34,25 +39,28 @@ def set_manual_motor():
 
 @app.route('/config', methods=['GET'])
 def get_config():
-    return Response(json.dumps({'duration': DEFAULT_DURATION, 'speed': DEFAULT_SPEED}), 
-        status=200, mimetype='application/json;charset=utf-8')
+    return Response(json.dumps(config), status=200, mimetype='application/json;charset=utf-8')
 
 @app.route('/config', methods=['POST'])
 def set_config():
-    print(f'set config to {request.get_json()}')
+    new_config = request.get_json()
+    config['duration'] = new_config['duration']
+    config['speed'] = new_config['speed']
+    print(f'set config to {config}')
     return Response('', status=200, mimetype='text/plain;charset=utf-8')
 
 @app.route('/reset', methods=['POST'])
 def reset():
+    config['duration'] = DEFAULT_DURATION
+    config['speed'] = DEFAULT_SPEED
     print('reset config')
     return Response('', status=200, mimetype='text/plain;charset=utf-8')
 
 @app.route('/feed', methods=['POST'])
 def feed():
-    d = request.args['d'] if 'd' in request.args else DEFAULT_DURATION
-    s = request.args['s'] if 's' in request.args else DEFAULT_SPEED
-    print(f'feeding d={d},s={s}')
-    time.sleep(int(d))
+    d = request.args['d'] if 'd' in request.args else config['duration']
+    s = request.args['s'] if 's' in request.args else config['speed']
+    print(f'feeding with d={d},s={s}')
     return Response('Fed the cat!', status=200, mimetype='text/plain;charset=utf-8')
 
 if __name__ == '__main__':
