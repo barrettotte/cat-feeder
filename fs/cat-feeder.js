@@ -137,10 +137,9 @@ async function resetButtonAction() {
   }
 }
 
-// reset controls from config.json
-async function resetFromConfig() {
+async function loadConfig() {
   try {
-    const resp = await fetch(`${catFeeder}/config.json`, {headers: {'Content-Type': 'application/json'}});
+    const resp = await fetch(`${catFeeder}/config`, {headers: {'Content-Type': 'application/json'}});
     if (resp.ok) {
       const data = await resp.json();
       durationCtrl.value = data['duration'];
@@ -149,14 +148,14 @@ async function resetFromConfig() {
       throw failedRequestError(resp);
     }
   } catch (err) {
-    console.warn('Failed to reset using config.json from cat feeder. Using client defaults.', err);
+    console.warn('Failed to load config from cat feeder. Using client defaults.', err);
     resetControls();
   }
 }
 
 /*** event binding ***/
 
-window.addEventListener('load', async (_) => await resetFromConfig());
+window.addEventListener('load', async (_) => await loadConfig());
 durationCtrl.addEventListener('refreshDisplay', () => setCurlCmd());
 speedCtrl.addEventListener('refreshDisplay', () => setCurlCmd());
 
