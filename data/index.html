@@ -2,43 +2,44 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <title>Cat Feeder</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header>
     <h1>Cat Feeder 🐈</h1>
+    <a href="https://github.com/barrettotte/cat-feeder">https://github.com/barrettotte/cat-feeder</a>
   </header>
   <main>
     <section id="main-controls">
-      <p class="section-heading">Controls</p>
-      <!-- TODO: align center -->
-      <span>Duration</span>
-      <input id="duration-slider" type="range" min="0" max="25" value="5">
-      <span id="duration-display"></span>
-      <br>
-      <span>Speed</span>
-      <input id="speed-slider" type="range" min="0" max="100" value="50">
-      <span id="speed-display"></span>
-      <br>
+      <h2>Controls</h2>
+      <div class="flex-container">
+        <p>Duration</p>
+        <input id="duration-slider" type="range" min="0" max="25" value="5">
+        <p id="duration-display"></p>
+      </div>
+      <div class="flex-container">
+        <p>Speed</p>
+        <input id="speed-slider" type="range" min="0" max="100" value="50">
+        <p id="speed-display"></p>
+      </div>
       <button id="feed-button" type="button">Feed the Cat!</button>
     </section>
     <section id="config-actions">
-      <p class="section-heading">Configuration</p>
-      <button id="view-button" class="config-button" type="button">View</button>
-      <button id="save-button" class="config-button" type="button">Save To Feeder</button>
-      <button id="reset-button" class="config-button" type="button">Reset</button>
-      <br>
+      <h2>Configuration</h2>
+      <div class="flex-container">
+        <button id="view-button" class="config-button" type="button">View</button>
+        <button id="save-button" class="config-button" type="button">Save To Feeder</button>
+        <button id="reset-button" class="config-button" type="button">Reset</button>
+      </div>
     </section>
     <section id="terminal">
-      <p class="section-heading">Terminal</p>
-      <code id="curl-cmd">curl -X POST ?</code>
+      <h2>Terminal</h2>
+      <code id="curl-cmd"></code>
     </section>
   </main>
-  <footer>
-    View source at <a href="https://github.com/barrettotte/cat-feeder">https://github.com/barrettotte/cat-feeder</a>
-  </footer>
+  <footer></footer>
 </body>
 <script src="cat-feeder.js"></script> 
 </html>

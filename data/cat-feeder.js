@@ -140,7 +140,7 @@ async function resetButtonAction() {
 // reset controls from config.json
 async function resetFromConfig() {
   try {
-    const resp = await fetch(`${catFeeder}/config.json`, {headers: {'Content-Type': 'application/json'}, referrer: 'no-refferer'});
+    const resp = await fetch(`${catFeeder}/config.json`, {headers: {'Content-Type': 'application/json'}});
     if (resp.ok) {
       const data = await resp.json();
       durationCtrl.value = data['duration'];
