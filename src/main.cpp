@@ -156,6 +156,7 @@ void handleSetConfig(AsyncWebServerRequest* req, JsonVariant& json) {
     data = json.as<JsonObject>();
     config->duration = constrain(data["duration"], 0, MAX_DURATION);
     config->speed = constrain(data["speed"], 0, MAX_SPEED);
+    saveConfig();
 
     Serial.printf("Set config: duration=%d,speed=%d\n", config->duration, config->speed);
     req->send(200);
