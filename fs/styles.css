@@ -55,7 +55,7 @@ section h2 {
 }
 
 .flex-container p {
-  flex-basis: 90px;
+  flex-basis: 100px;
   text-align: left;
 }
 

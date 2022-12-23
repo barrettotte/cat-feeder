@@ -34,15 +34,12 @@ class Control {
     );
   }
 
-  reset() {
-    this.value = this.defaultValue;
-  }
-
   refreshDisplay() {
     this.display.innerHTML = `${this.value} ${this.units}`;
     this.emit('refreshDisplay');
   }
 
+  reset = () => this.value = this.defaultValue;
   addEventListener = (method, callback) => this.listeners[method] = callback;
   removeEventListener = (method) => delete this.listeners[method];
 
@@ -55,10 +52,16 @@ class Control {
 }
 
 const catFeederMock = 'http://localhost:8080';
-const catFeeder = 'http://192.168.1.83';
-const backendDelaySecs = 4;
-const speedCtrl = Control.createFromPrefix('speed', '%', 50);
-const durationCtrl = Control.createFromPrefix('duration', 'second(s)', 5);
+const catFeederEsp8266 = 'http://192.168.1.83';
+const catFeeder = catFeederMock;
+
+const defaultSpeedPercent = 50;
+const defaultDuration = 10;
+const maxSpeed = 255;
+const backendDelaySecs = 2;
+
+const speedCtrl = Control.createFromPrefix('speed', '%', defaultSpeedPercent);
+const durationCtrl = Control.createFromPrefix('duration', 'second(s)', defaultDuration);
 const viewButton = document.getElementById('view-button');
 const saveButton = document.getElementById('save-button');
 const resetButton = document.getElementById('reset-button');
@@ -67,8 +70,8 @@ const curlCmd = document.getElementById('curl-cmd');
 
 /*** functions ***/
 
-const convertSpeedToPercent = (speed) => Math.floor((speed / 255) * 100);
-const convertPercentToSpeed = (percent) => Math.ceil(255 * (percent / 100));
+const convertSpeedToPercent = (speed) => Math.floor((speed / maxSpeed) * 100);
+const convertPercentToSpeed = (percent) => Math.ceil(maxSpeed * (percent / 100));
 const failedRequestError = (resp) => new Error(`${resp.status} - ${resp.statusText}`);
 
 function setCurlCmd() {
@@ -93,18 +96,18 @@ function disableControls(disabled) {
 
 async function feedButtonAction() {
   try {
-    const d = durationCtrl.value;
+    const d = parseInt(durationCtrl.value);
     const s = convertPercentToSpeed(speedCtrl.value);
     const resp = await fetch(`${catFeeder}/feed?d=${d}&s=${s}`, {method: 'POST'});
+
     if (!resp.ok) {
       throw failedRequestError(resp);
     } else {
-      const originalText = feedButton.innerText;
       disableControls(true);
       feedButton.innerText = 'Feeding...';
       await new Promise(r => setTimeout(r, (d + backendDelaySecs) * 1000));
       disableControls(false);
-      feedButton.innerText = originalText;
+      feedButton.innerText = 'Feed the Cat!';
     }
   } catch (err) {
     console.error('Error occurred while feeding cat on cat feeder', err);
@@ -116,7 +119,10 @@ async function saveButtonAction() {
     const resp = await fetch(`${catFeeder}/config`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({duration: durationCtrl.value, speed: convertPercentToSpeed(speedCtrl.value)})
+      body: JSON.stringify({
+        duration: durationCtrl.value, 
+        speed: convertPercentToSpeed(speedCtrl.value)
+      })
     });
     if (!resp.ok) {
       throw failedRequestError(resp);
