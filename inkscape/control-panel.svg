@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 793.7007874015749 1122.5196850393702"
+   width="793.7007874015749"
+   height="1122.5196850393702"
+   version="1.1"
+   id="svg157"
+   sodipodi:docname="control-panel.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview159"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     showguides="false"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="397.21723"
+     inkscape:cy="561.08923"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g155" />
+  <desc
+     id="desc117">control-panel.dxf - scale = 1.000000, origin = (0.000000, 0.000000), method = manual</desc>
+  <defs
+     id="defs131" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="0"
+     id="g155">
+    <path
+       d="m 562.67717,625.5118 a 18.897638,18.897638 0 0 0 18.89764,-18.89764 V 515.9055 A 18.897638,18.897638 0 0 0 562.67717,497.00786 H 231.02363 a 18.897638,18.897638 0 0 0 -18.89764,18.89764 v 90.70866 a 18.897638,18.897638 0 0 0 18.89764,18.89764 z"
+       style="fill:none;stroke:#000000"
+       id="path133" />
+    <path
+       style="fill:none;stroke:#000000;stroke-opacity:1"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="0"
+       inkscape:original="M 231.02344 497.00781 A 18.897638 18.897638 0 0 0 212.12695 515.90625 L 212.12695 606.61328 A 18.897638 18.897638 0 0 0 231.02344 625.51172 L 562.67773 625.51172 A 18.897638 18.897638 0 0 0 581.57422 606.61328 L 581.57422 515.90625 A 18.897638 18.897638 0 0 0 562.67773 497.00781 L 231.02344 497.00781 z "
+       xlink:href="#path135"
+       id="path1554"
+       inkscape:href="#path135"
+       d="m 231.02344,497.00781 a 18.897638,18.897638 0 0 0 -18.89649,18.89844 v 90.70703 a 18.897638,18.897638 0 0 0 18.89649,18.89844 h 331.65429 a 18.897638,18.897638 0 0 0 18.89649,-18.89844 v -90.70703 a 18.897638,18.897638 0 0 0 -18.89649,-18.89844 z"
+       transform="matrix(0.97844863,0,0,0.94582606,8.5524888,30.405599)" />
+    <path
+       d="m 212.12599,606.61418 v -90.7087 a 18.897638,18.897638 0 0 1 18.89764,-18.8976 h 331.65354 a 18.897638,18.897638 0 0 1 18.89764,18.8976 v 90.7087 a 18.897638,18.897638 0 0 1 -18.89764,18.8976 H 231.02363 a 18.897638,18.897638 0 0 1 -18.89764,-18.8976 z"
+       style="fill:none;stroke:#000000"
+       id="path135" />
+    <path
+       style="fill:none;stroke:#000000;stroke-opacity:1"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="0"
+       inkscape:original="M 483.7793 539.05469 A 22.204725 22.204725 0 0 0 461.57422 561.25977 A 22.204725 22.204725 0 0 0 505.98438 561.25977 A 22.204725 22.204725 0 0 0 483.7793 539.05469 z "
+       xlink:href="#path145"
+       id="path758"
+       inkscape:href="#path145"
+       d="m 483.7793,539.05469 a 22.204725,22.204725 0 0 0 -22.20508,22.20508 22.20508,22.20508 0 0 0 44.41016,0 22.204725,22.204725 0 0 0 -22.20508,-22.20508 z"
+       transform="matrix(1.2666666,0,0,1.2666666,-129.00743,-149.66926)" />
+    <path
+       d="m 505.98382,561.25994 a 22.204725,22.204725 0 0 0 -44.40945,0 22.204725,22.204725 0 0 0 44.40945,0 z"
+       style="fill:none;stroke:#000000"
+       id="path145" />
+    <path
+       style="fill:none;stroke:#000000"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="0"
+       inkscape:original="M 304.0332 531.20703 A 30.708661 30.708661 0 0 0 280.1582 561.13867 A 30.708661 30.708661 0 0 0 341.57422 561.13867 A 30.708661 30.708661 0 0 0 304.0332 531.20703 z "
+       xlink:href="#path147"
+       id="path533"
+       inkscape:href="#path147"
+       d="m 304.0332,531.32812 a 30.708661,30.708661 0 0 0 -23.875,29.93165 30.708661,30.708661 0 0 0 61.41602,0 30.708661,30.708661 0 0 0 -37.54102,-29.93165 z"
+       transform="translate(-9.4064141e-5,0.12182221)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="0"
+       inkscape:original="M 304.0332 531.20703 A 30.708661 30.708661 0 0 0 280.1582 561.13867 A 30.708661 30.708661 0 0 0 341.57422 561.13867 A 30.708661 30.708661 0 0 0 304.0332 531.20703 z "
+       xlink:href="#path147"
+       id="path754"
+       inkscape:href="#path147"
+       d="m 304.0332,531.32812 a 30.708661,30.708661 0 0 0 -23.875,29.93165 30.708661,30.708661 0 0 0 61.41602,0 30.708661,30.708661 0 0 0 -37.54102,-29.93165 z"
+       transform="matrix(1.1939969,0,0,1.1939969,-60.307159,-108.73677)" />
+    <path
+       d="m 341.5749,561.13796 a 30.708661,30.708661 0 0 0 -61.41732,0 30.708661,30.708661 0 0 0 61.41732,0 z"
+       style="fill:none;stroke:#000000"
+       id="path147" />
+    <path
+       style="fill:none;stroke:#000000;stroke-opacity:1"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="0"
+       inkscape:original="M 374.17383 522.51953 L 374.17383 600 L 419.52734 600 L 419.52734 522.51953 L 374.17383 522.51953 z "
+       xlink:href="#path149"
+       id="path756"
+       inkscape:href="#path149"
+       d="M 374.17383,522.51953 V 600 h 45.35351 v -77.48047 z"
+       transform="matrix(1.2710671,0,0,1.1435524,-107.57339,-80.570116)" />
+    <path
+       d="m 419.52781,599.99994 h -45.35433 v -77.4803 h 45.35433 z"
+       style="fill:none;stroke:#000000"
+       id="path149" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1"
+       x="301.37775"
+       y="612.82849"
+       id="text419"><tspan
+         sodipodi:role="line"
+         id="tspan417"
+         x="301.37775"
+         y="612.82849">Feed</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1"
+       x="468.29181"
+       y="612.76599"
+       id="text477"><tspan
+         sodipodi:role="line"
+         id="tspan475"
+         x="468.29181"
+         y="612.76599">12V DC</tspan></text>
+  </g>
+</svg>
