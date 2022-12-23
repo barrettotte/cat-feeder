@@ -110,6 +110,10 @@ void feed(uint8_t duration, uint8_t speed) {
     // blocks with delays...consider refactor to state machine?
     Serial.printf("Feeding with duration=%d,speed=%d\n", duration, speed);
 
+    // ensure servo closed
+    moveServo(false);
+    delay(500);
+
     // open chute
     moveServo(true);
     delay(1000);
@@ -118,7 +122,7 @@ void feed(uint8_t duration, uint8_t speed) {
     setMotor(true, speed);
     delay(duration * 1000); // secs to ms
     setMotor(false, 0);
-    delay(500);
+    delay(1000);
 
     // close chute
     moveServo(false);
@@ -278,9 +282,9 @@ void initServer() {
 void IRAM_ATTR handleButtonInterrupt() {
     buttonTimer->currentMs = millis();
 
-    if (buttonTimer->currentMs - buttonTimer->prevMs > DEBOUNCE_MS) {
+    if ((buttonTimer->currentMs - buttonTimer->prevMs > DEBOUNCE_MS)) {
         buttonTimer->trigger = true;
-        buttonTimer->prevMs = buttonTimer->prevMs;
+        buttonTimer->prevMs = buttonTimer->currentMs;
         Serial.println("Button pressed.");
     }
 }
@@ -288,32 +292,42 @@ void IRAM_ATTR handleButtonInterrupt() {
 /*** main ***/
 
 void setup() {
+    pinMode(BUTTON_PIN, INPUT_PULLUP);
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, HIGH);
+    
     initSerial();
     initWifi();
     initFs();
 
     initConfig();
-    feeder->trigger = false;
-    attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), handleButtonInterrupt, FALLING);
+    attachInterrupt(BUTTON_PIN, handleButtonInterrupt, RISING);
 
     initServo();
     initMotor();
     initServer();
 
-    pinMode(BUTTON_PIN, INPUT);
-    pinMode(LED_BUILTIN, OUTPUT);
+    feeder->trigger = false;
+    buttonTimer->trigger = false;
+    delay(1000);
+
+    digitalWrite(LED_BUILTIN, LOW);
     Serial.println("Setup Done.");
 }
 
 void loop() {
-    if (buttonTimer->trigger && !feeder->trigger) {
-        feeder->motorDuration = config->duration;
-        feeder->motorSpeed = config->speed;
-        feeder->trigger = true;
-        buttonTimer->trigger = false;
-    }
-    if (feeder->trigger && !feeder->motorEn) {
+    if (buttonTimer->trigger) {
+        if (!feeder->trigger) {
+            feeder->motorDuration = config->duration;
+            feeder->motorSpeed = config->speed;
+            feeder->trigger = true;
+        } else {
+            Serial.println("Feeder is already triggered. Button press ignored.");
+            buttonTimer->trigger = false;
+        }
+    } else if (feeder->trigger) {
         feed(feeder->motorDuration, feeder->motorSpeed);
         feeder->trigger = false;
+        delay(250);
     }
 }

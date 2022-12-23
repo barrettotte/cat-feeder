@@ -54,7 +54,9 @@ class Control {
   }
 }
 
-const catFeeder = 'http://localhost:8080';
+const catFeederMock = 'http://localhost:8080';
+const catFeeder = 'http://192.168.1.83';
+const backendDelaySecs = 4;
 const speedCtrl = Control.createFromPrefix('speed', '%', 50);
 const durationCtrl = Control.createFromPrefix('duration', 'second(s)', 5);
 const viewButton = document.getElementById('view-button');
@@ -100,7 +102,7 @@ async function feedButtonAction() {
       const originalText = feedButton.innerText;
       disableControls(true);
       feedButton.innerText = 'Feeding...';
-      await new Promise(r => setTimeout(r, d * 1000));
+      await new Promise(r => setTimeout(r, (d + backendDelaySecs) * 1000));
       disableControls(false);
       feedButton.innerText = originalText;
     }

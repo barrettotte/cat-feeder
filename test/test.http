@@ -1,7 +1,7 @@
 # test hitting ESP8266 web server
 
-# @feeder = 192.168.1.83
-@feeder = 127.0.0.1:8080
+@feeder = 192.168.1.83
+# @feeder = 127.0.0.1:8080
 
 ### Hit homepage
 GET http://{{feeder}}/ HTTP/1.1

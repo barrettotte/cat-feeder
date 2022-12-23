@@ -19,5 +19,5 @@
 #define MAX_DURATION 25
 #define MAX_SPEED 255
 
-#define SERVO_OPEN 180
+#define SERVO_OPEN 90
 #define SERVO_CLOSE 0
