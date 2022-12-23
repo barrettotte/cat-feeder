@@ -3,9 +3,9 @@
 import json
 from flask import Flask, Response, request, send_from_directory
 
-DEFAULT_DURATION = 5
+DEFAULT_DURATION = 10
 DEFAULT_SPEED = 128
-DATA_DIR = '../data'
+ESP8266_FS = '../fs'
 
 config = {'duration': DEFAULT_DURATION, 'speed': DEFAULT_SPEED}
 
@@ -13,15 +13,15 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return send_from_directory(DATA_DIR, 'index.html')
+    return send_from_directory(ESP8266_FS, 'index.html')
 
 @app.route('/styles.css', methods=['GET'])
 def get_styles_css():
-    return send_from_directory(DATA_DIR, 'styles.css')
+    return send_from_directory(ESP8266_FS, 'styles.css')
 
 @app.route('/cat-feeder.js', methods=['GET'])
 def get_js():
-    return send_from_directory(DATA_DIR, 'cat-feeder.js')
+    return send_from_directory(ESP8266_FS, 'cat-feeder.js')
 
 @app.route('/config.json', methods=['GET'])
 def get_config_json():

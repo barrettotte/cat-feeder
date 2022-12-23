@@ -116,17 +116,17 @@ void feed(uint8_t duration, uint8_t speed) {
 
     // open chute
     moveServo(true);
-    delay(1000);
+    delay(500);
 
     // run motor for duration
     setMotor(true, speed);
     delay(duration * 1000); // secs to ms
     setMotor(false, 0);
-    delay(1000);
+    delay(500);
 
     // close chute
     moveServo(false);
-    delay(1000);
+    delay(500);
 }
 
 /*** handlers ***/
