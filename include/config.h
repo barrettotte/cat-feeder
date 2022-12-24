@@ -5,6 +5,8 @@
 #define CONFIG_PATH "/config.json"
 
 #define BUTTON_PIN D4
+#define READY_PIN D8
+
 #define SERVO_PIN D5
 #define MOTOR_EN_PIN D7
 #define MOTOR_IN1_PIN D1
