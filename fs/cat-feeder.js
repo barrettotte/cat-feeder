@@ -53,7 +53,7 @@ class Control {
 
 const catFeederMock = 'http://localhost:8080';
 const catFeederEsp8266 = 'http://192.168.1.83';
-const catFeeder = catFeederMock;
+const catFeeder = catFeederEsp8266;
 
 const defaultSpeedPercent = 50;
 const defaultDuration = 10;
