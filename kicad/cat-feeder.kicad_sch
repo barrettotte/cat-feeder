@@ -1466,7 +1466,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 98ff483f-c680-47cd-8f24-3acc0f5d4892)
     (property "Reference" "R?" (id 0) (at 166.37 107.95 90))
-    (property "Value" "220" (id 1) (at 166.37 110.49 90))
+    (property "Value" "470" (id 1) (at 166.37 110.49 90))
     (property "Footprint" "" (id 2) (at 166.624 113.284 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1532,7 +1532,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid ad93abf6-cd91-4097-ad5f-237abd0904a2)
     (property "Reference" "R?" (id 0) (at 170.18 33.02 90))
-    (property "Value" "220" (id 1) (at 170.18 35.56 90))
+    (property "Value" "470" (id 1) (at 170.18 35.56 90))
     (property "Footprint" "" (id 2) (at 170.434 38.354 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1711,10 +1711,10 @@
       (reference "R1") (unit 1) (value "10K") (footprint "")
     )
     (path "/98ff483f-c680-47cd-8f24-3acc0f5d4892"
-      (reference "R?") (unit 1) (value "220") (footprint "")
+      (reference "R?") (unit 1) (value "470") (footprint "")
     )
     (path "/ad93abf6-cd91-4097-ad5f-237abd0904a2"
-      (reference "R?") (unit 1) (value "220") (footprint "")
+      (reference "R?") (unit 1) (value "470") (footprint "")
     )
     (path "/3f36e4ce-1226-4af1-b183-1986a281738d"
       (reference "SW1") (unit 1) (value "SW_SPST") (footprint "")
