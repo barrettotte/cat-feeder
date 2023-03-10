@@ -61,15 +61,9 @@ Maybe one day I'll redesign a better cat feeder from scratch when I've learned a
 - Saturate the feeder by running a few long feeds until food falls out of the chute
 - Use the web interface at http://catfeeder.agartha to feed the cat
 
-## More Images
-
-Kicad project files can be found in [kicad/](kicad/)
+## CAD and Circuit Images
 
 ![images/schematic-cropped.png](images/schematic-cropped.png)
-
-## CAD
-
-The Fusion360 project and individual 3D-printed parts can be found in [fusion360/](fusion360/)
 
 ![images/fusion360-final.png](images/fusion360-final.png)
 
