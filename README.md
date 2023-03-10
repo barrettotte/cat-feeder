@@ -13,7 +13,7 @@ A cat feeder utilizing a DC motor and an archimedes screw to dispense food.
 The feeder hosts a web interface to configure and interact from any device's web browser.
 The web interface also generates a corresponding `curl` command, so feed times could potentially be scheduled via cron jobs on another machine.
 
-On the back of the feeder are two LEDs, a button, a power switch, and 12V DC power jack.
+On the back of the feeder are two LEDs, a button, a power switch, and a 12V DC power jack.
 The button is used for manual feeding and can be configured via the feeder's web interface.
 The "READY" LED is used to signal to the user that the state machine is in a state where either feeding or
 initialization is in progress. When in this state, feed requests are blocked.
@@ -45,7 +45,7 @@ Maybe one day I'll redesign a better cat feeder from scratch when I've learned a
 
 - [fs/](fs/) - Filesystem uploaded to cat-feeder. Includes configuration JSON and web interface files.
 - [fusion360/](fusion360/) - Fusion360 project file, exported models, and incomplete part list.
-- [include/](include/) - Configuration for the feeder
+- [include/](include/) - Configuration for the feeder.
 - [inkscape/](inkscape/) - SVGs for back panel of feeder.
 - [kicad/](kicad/) - Schematic and electronics parts list.
 - [src/](src/) - Backend for the feeder.
@@ -65,7 +65,9 @@ Maybe one day I'll redesign a better cat feeder from scratch when I've learned a
 
 ![images/schematic-cropped.png](images/schematic-cropped.png)
 
-![images/fusion360-final.png](images/fusion360-final.png)
+<img src="images/fusion360-no-enclosure.png" alt="fusion360-no-enclosure" width="50%" height="50%"/>
+
+<img src="images/fusion360-final.png" alt="fusion360-final" width="50%" height="50%"/>
 
 ## Parts
 
