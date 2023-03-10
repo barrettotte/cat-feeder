@@ -41,6 +41,16 @@ Maybe one day I'll redesign a better cat feeder from scratch when I've learned a
 
 <img src="images/cat-feeder-bottom.jpg" alt="cat-feeder-bottom" width="50%" height="50%"/>
 
+## Directories
+
+- [fs/](fs/) - Filesystem uploaded to cat-feeder. Includes configuration JSON and web interface files.
+- [fusion360/](fusion360/) - Fusion360 project file, exported models, and incomplete part list.
+- [include/](include/) - Configuration for the feeder
+- [inkscape/](inkscape/) - SVGs for back panel of feeder.
+- [kicad/](kicad/) - Schematic and electronics parts list.
+- [src/](src/) - Backend for the feeder.
+- [test/](test/) - Test files and mock backend.
+
 ## Setup
 
 - Configure WiFi credentials in `include/secrets.h`
@@ -51,7 +61,7 @@ Maybe one day I'll redesign a better cat feeder from scratch when I've learned a
 - Saturate the feeder by running a few long feeds until food falls out of the chute
 - Use the web interface at http://catfeeder.agartha to feed the cat
 
-## Circuit
+## More Images
 
 Kicad project files can be found in [kicad/](kicad/)
 
@@ -59,14 +69,14 @@ Kicad project files can be found in [kicad/](kicad/)
 
 ## CAD
 
-The Fusion360 project and individual 3D-printed parts can be found in [fusion360/](fusion360/).
+The Fusion360 project and individual 3D-printed parts can be found in [fusion360/](fusion360/)
 
 ![images/fusion360-final.png](images/fusion360-final.png)
 
 ## Parts
 
-- Electronics parts list is in [kicad/parts.md]
-- Incomplete hardware/3D-printed parts list is in [fusion360/parts.md]
+- Electronics parts list is in [kicad/parts.md](kicad/parts.md)
+- Incomplete hardware/3D-printed parts list is in [fusion360/parts.md](fusion360/parts.md)
 
 ## References
 
